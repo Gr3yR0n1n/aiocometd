@@ -486,8 +486,7 @@ class Client:  # pylint: disable=too-many-instance-attributes
         # task waiting on connection timeout
         if connection_timeout:
             timeout_task = asyncio.ensure_future(
-                self._wait_connection_timeout(connection_timeout),
-                loop=self._loop
+                self._wait_connection_timeout(connection_timeout)
             )
             tasks.append(timeout_task)
 
